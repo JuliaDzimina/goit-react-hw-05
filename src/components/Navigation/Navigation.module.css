@@ -1,0 +1,24 @@
+.header {
+  background-color: #87ceeb;
+  padding: 8px 16px;
+  height: 60px;
+}
+
+.nav {
+  display: flex;
+  font-size: 36px;
+  gap: 24px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.navLink {
+  text-decoration: none;
+  color: #020862;
+}
+
+.navLink:hover {
+  transform: scale(1.1);
+}
+
+.active {
+}
