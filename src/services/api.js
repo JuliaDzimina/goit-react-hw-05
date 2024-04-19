@@ -6,8 +6,6 @@ const API_KEY = "2ae22097d31211671987ec9823871d47";
 const TOKEN =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYWUyMjA5N2QzMTIxMTY3MTk4N2VjOTgyMzg3MWQ0NyIsInN1YiI6IjY2MjExN2MzMDIzMWYyMDE3YzExY2Q1NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TueSlk3mXCd34Bix1uba8oes31u1jewhqkVObG5KW9Y";
 
-console.log(API_KEY, TOKEN);
-
 const options = {
   headers: {
     Authorization: `Bearer ${TOKEN}`,

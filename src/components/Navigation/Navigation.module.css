@@ -1,5 +1,5 @@
 .header {
-  background-color: #87ceeb;
+  background-color: #a4a2a6;
   padding: 8px 16px;
   height: 60px;
 }
@@ -13,7 +13,7 @@
 }
 .navLink {
   text-decoration: none;
-  color: #020862;
+  color: #1e1f20;
 }
 
 .navLink:hover {
@@ -21,4 +21,6 @@
 }
 
 .active {
+  color: #5a3b4d;
+  text-shadow: rgb(112, 87, 106) 1px 0 4px;
 }
