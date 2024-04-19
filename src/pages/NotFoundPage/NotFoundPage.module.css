@@ -1,0 +1,18 @@
+.pageNotFound {
+  color: dimgray;
+  text-align: center;
+}
+.btnGoHome {
+  display: block;
+  border: 2px solid dimgray;
+  border-radius: 8px;
+  margin: 0 auto;
+  width: 100px;
+  height: 30px;
+  text-decoration: none;
+  align-content: center;
+  font-weight: 600;
+  align-items: center;
+  color: dimgray;
+  background-color: rgb(212, 208, 208);
+}

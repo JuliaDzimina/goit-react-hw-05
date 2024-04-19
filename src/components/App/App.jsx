@@ -8,6 +8,7 @@ const NotFoundPage = lazy(() =>
 
 import Navigation from "../Navigation/Navigation";
 import "./App.css";
+import MoviesPage from "../../pages/MoviesPage/MoviesPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Suspense>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
+          <Route path="/movies" element={<MoviesPage />}></Route>
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
       </Suspense>

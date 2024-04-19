@@ -1,0 +1,15 @@
+.form {
+  margin: 12px;
+  width: 300px;
+}
+input {
+  width: 200px;
+}
+
+button {
+  margin-left: 20px;
+  width: 60px;
+  font-size: 14px;
+  background-color: rgb(213, 210, 210);
+  border: 1px solid gray;
+}
