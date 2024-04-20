@@ -11,7 +11,6 @@ const SearchForm = ({ onSearch }) => {
     }
 
     onSearch(form);
-    e.target.reset();
   };
 
   return (
