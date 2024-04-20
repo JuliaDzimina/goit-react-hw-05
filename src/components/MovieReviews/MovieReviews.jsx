@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { getMovieReviews } from "../../services/api";
+import MovieReviewsItem from "../MovieReviewsItem/MovieReviewsItem";
 
 const MovieReviews = () => {
   const [loading, setLoading] = useState(false);
@@ -31,6 +32,17 @@ const MovieReviews = () => {
     <div>
       {loading && <Loader />}
       {error && <ErrorMessage />}
+      <ul>
+        {reviews.length > 0 ? (
+          reviews.map((review) => (
+            <li key={review.id}>
+              <MovieReviewsItem review={review} />
+            </li>
+          ))
+        ) : (
+          <p>We don&apos;t have any reviews for this movie</p>
+        )}
+      </ul>
     </div>
   );
 };

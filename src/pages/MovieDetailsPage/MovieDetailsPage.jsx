@@ -10,6 +10,8 @@ import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { getMovieDetails } from "../../services/api";
 import MovieDetails from "../../components/MovieDetails/MovieDetails";
+import clsx from "clsx";
+import css from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
   const [loading, setLoading] = useState(false);
@@ -18,7 +20,13 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
 
   const location = useLocation();
-  const backLink = useRef(location.state?.from ?? "/");
+  const backLink = useRef(location.state?.from ?? "/movies");
+
+  function linkClasses({ isActive }) {
+    return clsx(css.infoLink, {
+      [css.active]: isActive,
+    });
+  }
 
   useEffect(() => {
     if (!movieId) return;
@@ -43,17 +51,22 @@ const MovieDetailsPage = () => {
       {loading && <Loader />}
       {error && <ErrorMessage />}
 
-      <Link to={backLink.current}> Go back</Link>
+      <Link to={backLink.current} className={css.btnGoBack}>
+        {" "}
+        Go back
+      </Link>
       {movieDetails && <MovieDetails movie={movieDetails} />}
 
-      <ul>
-        <li>
-          <NavLink to="cast">Cast</NavLink>
-        </li>
-        <li>
-          <NavLink to="reviews">Reviews</NavLink>
-        </li>
-      </ul>
+      <p>Additional information</p>
+      <div className={css.linkConteiner}>
+        <NavLink className={linkClasses} to="cast">
+          Cast
+        </NavLink>
+
+        <NavLink className={linkClasses} to="reviews">
+          Reviews
+        </NavLink>
+      </div>
 
       <Suspense fallback={<Loader />}>
         <Outlet />

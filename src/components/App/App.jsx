@@ -11,19 +11,22 @@ import "./App.css";
 import MoviesPage from "../../pages/MoviesPage/MoviesPage";
 import MovieDetailsPage from "../../pages/MovieDetailsPage/MovieDetailsPage";
 import MovieCast from "../MovieCast/MovieCast";
+import MovieReviews from "../MovieReviews/MovieReviews";
+import Loader from "../../components/Loader/Loader";
 
 function App() {
   return (
     <>
       <Navigation />
 
-      <Suspense>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/movies" element={<MoviesPage />}></Route>
           <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
             {" "}
             <Route path="cast" element={<MovieCast />}></Route>
+            <Route path="reviews" element={<MovieReviews />}></Route>
           </Route>
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
